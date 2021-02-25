@@ -1,0 +1,16 @@
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\bin\Debug\FashionShop.Model.dll.config
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\bin\Debug\FashionShop.Model.dll
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\bin\Debug\FashionShop.Model.pdb
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\bin\Debug\EntityFramework.dll
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\bin\Debug\EntityFramework.xml
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\obj\Debug\FashionShop.Model.dll
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\obj\Debug\FashionShop.Model.pdb
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\obj\Debug\FashionShop.Model.csprojAssemblyReference.cache
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\obj\Debug\FashionShop.Model.csproj.CoreCompileInputs.cache
+D:\C#\ASP.NET MVC\project3\FashionShop2\FashionShop.Model\obj\Debug\FashionShop.Model.csproj.CopyComplete
