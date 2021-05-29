@@ -18,10 +18,10 @@ namespace FashionShop.Web.Controllers
     public class ShoppingCartController : Controller
     {
         // GET: ShoppingCart
-        IProductService _productService;
-        IOrderService _orderService;
-        IOrderDetailService _orderDetailService;
-        private ApplicationUserManager _userManager;
+        private readonly IProductService _productService;
+        private readonly IOrderService _orderService;
+        private readonly IOrderDetailService _orderDetailService;
+        private readonly ApplicationUserManager _userManager;
 
         public ShoppingCartController(IOrderService orderService, IProductService productService, IOrderDetailService orderDetailService, ApplicationUserManager userManager)
         {

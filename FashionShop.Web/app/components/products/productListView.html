@@ -57,8 +57,8 @@
                         <td>{{item.Name}}</td>
                         <td>{{item.Alias}}</td>
                         <td>{{item.Type}}</td>
-                        <td>{{item.Price}}</td>
-                        <td>{{item.PromotionPrice}}</td>                    
+                        <td>{{item.Price | number:0}}đ</td>
+                        <td>{{item.PromotionPrice| number:0}}đ</td>                    
                         <td>{{item.CreatedDate  | date:'dd/MM/yyyy'}}</td>
                         <td>
                             <span ng-class="{'badge bg-red':item.Status==false,'badge bg-green':item.Status==true}">

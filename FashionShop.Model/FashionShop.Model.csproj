@@ -84,6 +84,8 @@
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\VisitorStatistic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\OrderDetailVm.cs" />
+    <Compile Include="ViewModels\OrderVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

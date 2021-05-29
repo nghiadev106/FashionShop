@@ -10,6 +10,7 @@ namespace FashionShop.Service
 {
     public interface IPostService
     {
+        int GetCountPost();
         Post Add(Post Post);
 
         void Update(Post Post);
@@ -174,6 +175,11 @@ namespace FashionShop.Service
             totalRow = query.Count();
 
             return query.Skip((page - 1) * pageSize).Take(pageSize);
+        }
+
+        public int GetCountPost()
+        {
+            return _postRepository.GetAll().Count();
         }
     }
 }

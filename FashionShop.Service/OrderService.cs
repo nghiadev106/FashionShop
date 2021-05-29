@@ -1,6 +1,7 @@
 ﻿using FashionShop.Data.Infrastructure;
 using FashionShop.Data.Repositories;
 using FashionShop.Model.Models;
+using FashionShop.Model.ViewModels;
 using System;
 using System.Collections.Generic;
 
@@ -8,9 +9,14 @@ namespace FashionShop.Service
 {
     public interface IOrderService
     {
+        IEnumerable<Order> GetAll();
         bool Create(Order order, List<OrderDetail> orderDetails);
 
         Order GetOrderByCustomerEmail(string email);
+        int GetCountOrder();
+
+        IEnumerable<Order> GetAll(string keyword);
+        IEnumerable<OrderVm> GetDetail(int orderId);
     }
     public class OrderService : IOrderService
     {
@@ -43,6 +49,29 @@ namespace FashionShop.Service
             {
                 throw ex;
             }
+        }
+
+        public IEnumerable<Order> GetAll()
+        {
+            return _orderRepository.GetAll();
+        }
+
+        public IEnumerable<Order> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+                return _orderRepository.GetMulti(x => x.CustomerName.Contains(keyword) || x.CustomerEmail.Contains(keyword) || x.CustomerMobile.Contains(keyword));
+            else
+                return _orderRepository.GetAll();
+        }
+
+        public int GetCountOrder()
+        {
+            return _orderRepository.GetCountOrder();
+        }
+
+        public IEnumerable<OrderVm> GetDetail(int orderId)
+        {
+            return _orderRepository.GetDetail(orderId);
         }
 
         public Order GetOrderByCustomerEmail(string email)

@@ -6,6 +6,7 @@
          'fashionshop.posts',
          'fashionshop.product_categories',
          'fashionshop.post_categories',
+         'fashionshop.orders',
          'fashionshop.common'])
         .config(config)
         .config(configAuthentication);

@@ -111,17 +111,18 @@
             CustomerMobile: $('#txtPhone').val(),
             CustomerMessage: $('#txtMessage').val(),
             PaymentMethod: "Thanh toán tiền mặt",
+            PaymentStatus: "Chờ xác nhận",
             Status: false
         }
         $.ajax({
-            url: '/ShoppingCart/CreateOrder',
-            type: 'POST',
-            dataType: 'json',
-            data: {
-                orderViewModel: JSON.stringify(order)
-            },
+            //url: '/ShoppingCart/CreateOrder',
+            url: '/api/orders/create-order',
+            type: "POST",
+            dataType: "json",
+            contentType: 'application/json',
+            data: JSON.stringify(order),
             success: function (response) {
-                if (response.status) {
+                if (response) {
                     console.log('create order ok');
                     $('#divCheckout').hide();
                     cart.deleteAll();

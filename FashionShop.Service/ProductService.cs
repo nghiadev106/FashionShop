@@ -32,7 +32,6 @@ namespace FashionShop.Service
 
         IEnumerable<Product> GetListProductFemale(int page, int pageSize, string sort, out int totalRow);
 
-
         IEnumerable<Product> Search(string keyword, int page, int pageSize, string sort, out int totalRow);
 
         IEnumerable<Product> GetListProduct(string keyword);
@@ -56,6 +55,7 @@ namespace FashionShop.Service
         IEnumerable<Product> GetListProductByTag(string tagId, int page, int pagesize, out int totalRow);
 
         bool SellProduct(int productId, int quantity);
+        int GetCount();
     }
 
     public class ProductService : IProductService
@@ -111,6 +111,11 @@ namespace FashionShop.Service
         public IEnumerable<Product> GetAll()
         {
             return _productRepository.GetAll();
+        }
+
+        public int GetCount()
+        {
+            return _productRepository.GetAll().Count();
         }
 
         public IEnumerable<Product> GetAll(string keyword)
