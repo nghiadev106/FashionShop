@@ -111,6 +111,7 @@ namespace FashionShop.Web.Controllers
                 status = true
             }, JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
         public JsonResult Add(int productId)
         {

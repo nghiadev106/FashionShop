@@ -143,35 +143,30 @@
     },
     deleteAll: function () {
         $.ajax({
-            url: '/ShoppingCart/DeleteAll',
-            type: 'POST',
+            url: '/api/carts/delete-all',
+            type: 'DELETE',
             dataType: 'json',
             success: function (response) {
-                if (response.status) {
+                if (response) {
                     cart.loadData();
-
                 }
+                    
             }
         });
     },
     updateAll: function () {
-        var cartList = [];
-        $.each($('.txtQuantity'), function (i, item) {
-            cartList.push({
-                ProductId: $(item).data('id'),
-                Quantity: $(item).val()
-            })
-                ;
-        });
+        var item = {
+            ProductId: $('.txtQuantity').data('id'),
+            Quantity: parseInt($('.txtQuantity').val())
+        }
         $.ajax({
-            url: '/ShoppingCart/Update',
-            type: 'POST',
-            data: {
-                cartData: JSON.stringify(cartList)
-            },
+            url: '/api/carts/update-cart',
+            type: 'PUT',
+            data: JSON.stringify(item),
             dataType: 'json',
+            contentType: 'application/json',
             success: function (response) {
-                if (response.status) {
+                if (response) {
                     cart.loadData();
                     console.log('Update ok');
                 }
@@ -180,14 +175,14 @@
     },
     deleteItem: function (productId) {
         $.ajax({
-            url: '/ShoppingCart/DeleteItem',
+            url: '/api/carts/delete-item/' + productId,
             data: {
                 productId: productId
             },
-            type: 'POST',
+            type: 'DELETE',
             dataType: 'json',
             success: function (response) {
-                if (response.status) {
+                if (response) {
                     cart.loadData();
                 }
             }

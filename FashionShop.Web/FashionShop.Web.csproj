@@ -246,6 +246,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
+    <Compile Include="Api\CartsController.cs" />
     <Compile Include="Api\HomeController.cs" />
     <Compile Include="Api\OrdersController.cs" />
     <Compile Include="Api\PostCategoryController.cs" />
@@ -298,6 +299,7 @@
     <Compile Include="Models\ShoppingCartViewModel.cs" />
     <Compile Include="Models\SlideViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
+    <Compile Include="Models\UpdateCartViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

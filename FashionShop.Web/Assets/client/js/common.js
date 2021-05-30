@@ -35,14 +35,17 @@
             e.preventDefault();
             var productId = parseInt($(this).data('id'));
             $.ajax({
-                url: '/ShoppingCart/Add',
+                // url: '/ShoppingCart/Add',
+                url: '/api/carts/add-to-cart/' + productId,
                 data: {
                     productId: productId
                 },
                 type: 'POST',
-                dataType: 'json',
+                dataType: "json",
+                contentType: 'application/json',
                 success: function (response) {
-                    if (response.status) {
+                    //if (response.status) {
+                    if (response) {
                         alert('Thêm sản phẩm thành công.');
                     }
                 }

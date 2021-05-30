@@ -20,54 +20,54 @@
         protected override void Seed(FashionShop.Data.FashionShopDbContext context)
         {
 
-            CreateProductCategorySample(context);
+           // CreateProductCategorySample(context);
             CreateContactDetail(context);
-            ///  This method will be called after migrating to the latest version.
+            // This method will be called after migrating to the latest version.
 
-            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new FashionShopDbContext()));
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new FashionShopDbContext()));
 
-            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new FashionShopDbContext()));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new FashionShopDbContext()));
 
-            //var user = new ApplicationUser()
-            //{
-            //    UserName = "nghia",
-            //    Email = "nghiadv1006@gmail.com",
-            //    EmailConfirmed = true,
-            //    BirthDay = DateTime.Now,
-            //    FullName = "Đỗ Văn Nghĩa"
-
-            //};
-
-            //manager.Create(user, "123654$");
-
-            //if (!roleManager.Roles.Any())
-            //{
-            //    roleManager.Create(new IdentityRole { Name = "Admin" });
-            //    roleManager.Create(new IdentityRole { Name = "User" });
-            //}
-
-            //var adminUser = manager.FindByEmail("nghiadv1006@gmail.com");
-
-            //manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
-
-        }
-
-        private void CreateProductCategorySample(FashionShop.Data.FashionShopDbContext context)
-        {
-            if (context.ProductCategories.Count() == 0)
+            var user = new ApplicationUser()
             {
-                List<ProductCategory> listProductCategory = new List<ProductCategory>()
-            {
-                new ProductCategory() { Name="Áo sơ mi",Alias="ao-so-mi",Status=true },
-                 new ProductCategory() { Name="Áo khoác",Alias="ao-khoac",Status=true },
-                  new ProductCategory() { Name="Áo len",Alias="ao-len",Status=true },
-                   new ProductCategory() { Name="Áo phông",Alias="ao-phong",Status=true }
+                UserName = "nghia123",
+                Email = "nghiadv1006@gmail.com",
+                EmailConfirmed = true,
+                BirthDay = DateTime.Now,
+                FullName = "Đỗ Văn Nghĩa"
+
             };
-                context.ProductCategories.AddRange(listProductCategory);
-                context.SaveChanges();
+
+            manager.Create(user, "nghia123");
+
+            if (!roleManager.Roles.Any())
+            {
+                roleManager.Create(new IdentityRole { Name = "Admin" });
+                roleManager.Create(new IdentityRole { Name = "User" });
             }
 
+            var adminUser = manager.FindByEmail("nghiadv1006@gmail.com");
+
+            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+
         }
+
+        //private void CreateProductCategorySample(FashionShop.Data.FashionShopDbContext context)
+        //{
+        //    if (context.ProductCategories.Count() == 0)
+        //    {
+        //        List<ProductCategory> listProductCategory = new List<ProductCategory>()
+        //    {
+        //        new ProductCategory() { Name="Áo sơ mi",Alias="ao-so-mi",Status=true },
+        //         new ProductCategory() { Name="Áo khoác",Alias="ao-khoac",Status=true },
+        //          new ProductCategory() { Name="Áo len",Alias="ao-len",Status=true },
+        //           new ProductCategory() { Name="Áo phông",Alias="ao-phong",Status=true }
+        //    };
+        //        context.ProductCategories.AddRange(listProductCategory);
+        //        context.SaveChanges();
+        //    }
+
+        //}
 
         private void CreateContactDetail(FashionShopDbContext context)
         {

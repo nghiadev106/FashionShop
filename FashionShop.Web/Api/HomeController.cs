@@ -38,14 +38,14 @@ namespace FashionShop.Web.Api
             return "Hello";
         }
 
-        [Route("getallparents")]
+        [Route("get-statistic")]
         [HttpGet]
-        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        public HttpResponseMessage GetStatistic(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>
             {
                 DashboardViewModel model = new DashboardViewModel();
-                model.PostCount = _productService.GetCount();
+                model.ProductCount = _productService.GetCount();
                 model.OrderCount = _orderService.GetCountOrder();
                 model.PostCount = _postService.GetCountPost();
                 model.UserCount = _userManager.Users.Count();
